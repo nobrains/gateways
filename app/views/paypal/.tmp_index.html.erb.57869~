@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Paypal</title>
+    </head>
+    <body>
+        <h1>Welcome to paypal gateway</h1>
+        <h2>Following parameters were received</h2>
+        <form method="post">
+            <%params.each do |key, value| %>
+            <%=key%> : <input name='<%=key%>' value='<%=value%>' />
+            <br />
+            <%end %>
+            <input type=submit value="success" />
+        </form>
+        <h3>What do you want?</h3>
+        <ul>
+            
+            <li>
+                <a href="<%=@successurl%>">Success transaction</a>
+            </li>
+            <li>
+                <a href="<%=@pendingurl%>">Pending transaction</a>
+            </li>
+            <li>
+                <a href="<%=@failureurl%>">Failure transaction</a>
+            </li>
+            <li>
+                <a href="<%=@cancelurl%>">Canceled transaction</a>
+            </li>
+        </ul>
+    </body>
+</html>
